@@ -41,23 +41,32 @@
 
 			<div class="results">
 
-				{% if prediction >=0 and prediction <=55 %} <h2 prediction : <span> The Estimated AQI is <b>Good</b>
+				{% if prediction >=0 and prediction <=50 %} <h2 prediction : <span> The Estimated AQI is <b>Good</b>
 					</span></h2>
+					<p>Air Quality is satisfactory, and air pollution poses little or no risk.</p>
 
 
-					{% elif prediction >= 56 and prediction <= 100 %} <h2 prediction : <span> The Estimated AQI is <b>
-							Satisfactory </b> </span></h2>
+					{% elif prediction >= 51 and prediction <= 100 %} <h2 prediction : <span> The Estimated AQI is <b>
+							Moderate </b> </span></h2>
+						<p>Air Quality is acceptable, and however there may be risk for ssome people particularly those who are unusually sensitve to air pollution.</p>
 
-						{% elif prediction >= 101 and prediction <= 200 %} <h2 prediction : <span> The Estimated AQI is
-							<b> Moderate </b> </span></h2>
+						{% elif prediction >= 101 and prediction <= 150 %} <h2 prediction : <span> The Estimated AQI is
+							<b> Unhealthy for sensitive groups </b> </span></h2>
+							<p>Memebrs of sensitive groups may experience health effects. The general public is less likely to be affected.</p>
 
-							{% elif prediction >= 201 and prediction <= 300 %} <h2 prediction : <span> The Estimated AQI
-								is <b> Poor </b> </span></h2>
+							{% elif prediction >= 151 and prediction <= 200 %} <h2 prediction : <span> The Estimated AQI
+								is <b> Unhealthy </b> </span></h2>
+								<p>Some members of the general public may experience health effects;members of sensitive groups may experience more serious health effects.</p>
+								
+								{% elif prediction >= 201 and prediction <= 300 %} <h2 prediction : <span> The Estimated AQI
+									is <b> Very unhealthy </b> </span></h2>
+									<p>Health alert: The risk of health effects is increased for everyone.</p>
 
-								{% else %}
-								<h2 prediction : <span> The Estimated AQI is <b> Severe </b> </span></h2>
+									{% else %}
+									<h2 prediction : <span> The Estimated AQI is <b> Severe </b> </span></h2>
+									<p>Health warning of emergency conditions : everyone is more likely to be affected.</p>
 
-								{% endif %}
+									{% endif %}
 
 			</div>
 
